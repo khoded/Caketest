@@ -7,7 +7,11 @@ class UsersController extends AppController
 {
     public function index()
     {
-        $this->set('users',$this->Users->find('all'));
+        $this->paginate=[
+            'limit'=>'5'
+        ];
+        $paginate=$this->paginate($this->Users->find('all'));
+        $this->set('users',$paginate);
     }
 
     public function add()

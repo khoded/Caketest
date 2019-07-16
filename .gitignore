@@ -5,6 +5,7 @@
 /logs/*
 /tmp/*
 /vendor/*
+./bump-version.sh
 
 # OS generated files #
 ######################
