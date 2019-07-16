@@ -42,8 +42,8 @@
 						<td><?php echo $users->Address ?></td>
                         <td><?php echo $users->Phonenumber ?></td>
                         <td>
-                            <?php echo $this->Html->link('VIEW', ['action'=>'view'],['class'=>'btn btn-primary']); ?>
-                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                            <?php echo $this->Html->link('VIEW', ['action'=>'view', $users->id],['class'=>'btn btn-primary']); ?>
+                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i classs="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
                             <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                         </td>
                     </tr>

@@ -26,7 +26,8 @@ class UsersController extends AppController
 
     public function view($id= Null){
         // code...
-            $post = $this->Users->get(;)
+            $users = $this->Users->get($id);
+            $this->set('user', $users);
     }
 
 }
