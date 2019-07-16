@@ -72,6 +72,16 @@ class UsersController extends AppController
         }
     }
 
+    public function export()
+    {
+    $this->setResponse($this->getResponse()->withDownload('my-file.csv'));
+    $_header = array('id', 'username','password','firstname','lastname','Phonenumber','Address','dob','gender','height','created','modified');
+    $data = $this->Users->find('all');
+    $_serialize = 'data';
+
+    $this->viewBuilder()->setClassName('CsvView.Csv');
+    $this->set(compact('data', '_serialize'));
+    }
 
 
 }

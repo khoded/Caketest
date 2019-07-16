@@ -8,7 +8,8 @@
 						<h2>User <b>Manager</b></h2>
 					</div>
 					<div class="col-sm-6">
-                        <?php echo $this->Html->link('ADD NEW EMPLOYER', ['action'=>'add'],['class'=>'btn btn-success']); ?>
+                        <?php echo $this->Html->link('ADD USER', ['action'=>'add'],['class'=>'btn btn-success']); ?>
+                        <?php echo $this->Html->link('EXPORT', ['action'=>'export'],['class'=>'btn btn-success']); ?>
 					</div>
                 </div>
             </div>
