@@ -7,7 +7,7 @@ A skeleton for creating applications with [CakePHP](https://cakephp.org) 3.x.
 
 The framework source code can be found here: [cakephp/cakephp](https://github.com/cakephp/cakephp).
 
-##Solutions and Concers
+## Solutions and Concers
 The project was initially meant to be built with Cakephp v2.5.4, the current version is 3.8.4, during my implementation a major challenge was having to use this version in my development environment, Noteably the cakephp version was unable to go live due to my dev env running a higher version, to resolve this issue i will have to downgrade which might risk other application using this service. I took the intiative of using the latest version, Fortunately i was able to complete the majority of the tasks but a long time abscence in this environment with issues with composer took a much longer time than expected unfortunately I was unable to implement some Bonus features for this reason.The development environment used 
 is Bitnami LAMP stack. 
 
