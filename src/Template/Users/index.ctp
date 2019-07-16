@@ -46,7 +46,12 @@
                             <br>
                             <?php echo $this->Html->link('EDIT', ['action'=>'edit', $users->id],['class'=>'btn btn-success']); ?>
                             <!-- <a href="users/edit" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a> -->
-
+                            <?= $this->Form->postLink(
+                            'Delete',
+                            ['action' => 'delete', $users->id],
+                            ['class'=>'btn btn-danger'],
+                            ['confirm'=>'are you sure'])
+                            ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>

@@ -41,9 +41,19 @@ class UsersController extends AppController
             return $this->redirect(['action' =>'index']);
         }
         $this->set('user', $users);
+        $this->Flash->success('User updated succesfully');
     }
 
-
+    public  function delete($id = Null){
+        // code...
+        $this->request->is(['post','delete']);
+        $user= $this->Users->get($id);
+        if ($this->Users->delete($user)) {
+            // code...
+            $this->Flash->success('User deleted succesfully', ['key'=>'message']);
+                return $this->redirect(['action'=>'index']);
+        }
+    }
 
 }
 ?>
