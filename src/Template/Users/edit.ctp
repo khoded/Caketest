@@ -32,6 +32,6 @@
                 <div class="modal-footer">
                     <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
                     <?php echo $this->Html->link('BACK', ['action'=>'index'],['class'=>'btn btn-primary']); ?>
-                     <?php echo $this->Form->button(__('Add User'), ['class'=>'btn btn-primary'], ['action'=>'add']); ?>
+                     <?php echo $this->Form->button(__('Submit'), ['class'=>'btn btn-primary'], ['action'=>'add']); ?>
                 </div>
             <?php echo $this->Form->end(); ?>
