@@ -5,6 +5,17 @@ namespace App\Controller;
 
 class UsersController extends AppController
 {
+    // public function login(){
+    // if ($this->request->is(['post'])) {
+    //     // code...
+    //     $user = $this->Auth->identify();
+    //     debug($user);
+    // }
+    // }
+    //
+    // public function logout(){
+    //     return $this->redirect($this->Auth->logout());
+    // }
     public function index()
     {
         $this->paginate=[
@@ -12,6 +23,8 @@ class UsersController extends AppController
         ];
         $paginate=$this->paginate($this->Users->find('all'));
         $this->set('users',$paginate);
+
+
     }
 
     public function add()
@@ -55,9 +68,11 @@ class UsersController extends AppController
         if ($this->Users->delete($user)) {
             // code...
             $this->Flash->success('User deleted succesfully', ['key'=>'message']);
-                return $this->redirect(['action'=>'index']);
+                return $this->redirect(['controller' => 'Users']);
         }
     }
+
+
 
 }
 ?>
