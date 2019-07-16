@@ -15,15 +15,18 @@
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
-
-                        <th>Name</th>
-                        <th>Email</th>
+                        <th>Check</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Gender</th>
 						<th>Address</th>
                         <th>Phone</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <?php if(!empty($users)): ?>
+                        <?php foreach($users as $users): ?>
                     <tr>
 						<td>
 							<span class="custom-checkbox">
@@ -31,15 +34,19 @@
 								<label for="checkbox1"></label>
 							</span>
 						</td>
-                        <td>Thomas Hardy</td>
-                        <td>thomashardy@mail.com</td>
-						<td>89 Chiaroscuro Rd, Portland, USA</td>
-                        <td>(171) 555-2222</td>
+                        <td><?php echo $users->Firstname ?></td>
+                        <td><?php echo $users->Lastname ?></td>
+                        <td><?php echo $users->gender ?></td>
+						<td><?php echo $users->Address ?>/td>
+                        <td><?php echo $users->Phonenumber ?></td>
                         <td>
                             <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
                             <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                         </td>
                     </tr>
+                <?php endforeach; ?>
+                <?php else:?>
+                <?php endif;?>
                 </tbody>
             </table>
 			<div class="clearfix">
