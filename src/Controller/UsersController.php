@@ -35,10 +35,10 @@ class UsersController extends AppController
         $users = $this->Users->get($id);
         if ($this->request->is(['post','put'])) {
             // code...
-            $users = $this->Users->patchEntity($users, $this->request->getData())
+            $users = $this->Users->patchEntity($users, $this->request->getData());
             $users->modified = date('Y-m-d H:i:s');
             $this->Users->save($users);
-            return $this->rediriect(['action' =>'index']);
+            return $this->redirect(['action' =>'index']);
         }
         $this->set('user', $users);
     }
