@@ -59,16 +59,30 @@
                 <?php endif;?>
                 </tbody>
             </table>
+            <?php $paginator = $this->Paginator->setTemplates([
+                'number' => '<li class="page-item"><a href="{{url}}" class="page-link">{{text}}</a></li>',
+                'current' => '<li class="page-item active"><a href="{{url}}" class="page-link">{{text}}</a></li>',
+                'first' => '<li class="page-item"><a href="{{url}}" class="page-link">&laquo</a></li>',
+                'last' => '<li class="page-item"><a href="{{url}}" class="page-link">&raquo</a></li>',
+                'prevActive' => '<li class="page-item"><a href="{{url}}" class="page-link">&rt</a></li>',
+                'nextActive' => '<li class="page-item"><a href="{{url}}" class="page-link">&gt</a></li>'
+            ]);
+            ?>
 			<div class="clearfix">
-                <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
                 <ul class="pagination">
-                    <li class="page-item disabled"><a href="#">Previous</a></li>
-                    <li class="page-item"><a href="#" class="page-link">1</a></li>
-                    <li class="page-item"><a href="#" class="page-link">2</a></li>
-                    <li class="page-item active"><a href="#" class="page-link">3</a></li>
-                    <li class="page-item"><a href="#" class="page-link">4</a></li>
-                    <li class="page-item"><a href="#" class="page-link">5</a></li>
-                    <li class="page-item"><a href="#" class="page-link">Next</a></li>
+                    <?php
+                    echo $paginator->first();
+                    if ($paginator->hasPrev()) {
+                        // code...
+                        echo $paginator->prev();
+                    }
+                    echo $paginator->numbers();
+                    if ($paginator->hasNext()) {
+                        // code...
+                        echo $paginator->next();
+                    }
+                    echo $paginator->last();
+                    ?>
                 </ul>
             </div>
         </div>
